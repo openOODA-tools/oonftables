@@ -1,0 +1,14 @@
+Source: oonftables
+Section: utils
+Priority: optional
+Maintainer: openOODA-tools <ops@openooda.org>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13)
+
+Package: oonftables
+Architecture: amd64
+Depends: libc6
+Description: NFT ENGINE
+ Manages atomic nftables rulesets for egress control and packet logging.
+ Capability-bounded openOODA utility with zero ambient authority,
+ oote theme palettes, and native Model Context Protocol (MCP) surface.

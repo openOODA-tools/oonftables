@@ -1,0 +1,21 @@
+# Maintainer: openOODA-tools <ops@openooda.org>
+pkgname=oonftables-bin
+_pkgname=oonftables
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Manages atomic nftables rulesets for egress control and packet logging."
+arch=('x86_64')
+url="https://github.com/openOODA-tools/oonftables"
+license=('Apache-2.0')
+depends=('glibc')
+provides=('oonftables')
+conflicts=('oonftables')
+source_x86_64=("${url}/releases/download/v${pkgver}/oonftables-linux-x86_64"
+               "uninstall.sh::https://raw.githubusercontent.com/openOODA-tools/${_pkgname}/v${pkgver}/uninstall.sh")
+sha256sums_x86_64=('SKIP'
+                   'SKIP')
+
+package() {
+    install -Dm755 "${srcdir}/oonftables-linux-x86_64" "${pkgdir}/usr/bin/oonftables"
+    install -Dm755 uninstall.sh "${pkgdir}/usr/bin/oonftables-uninstall"
+}
